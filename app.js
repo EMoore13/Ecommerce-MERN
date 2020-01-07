@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 //imported routes
+const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 
 //middleware
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use(expressValidator());
 
 //routes middleware
+app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 
 //db
