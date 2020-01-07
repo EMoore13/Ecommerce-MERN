@@ -62,6 +62,11 @@ userSchema.methods = {
         } catch(e) {
             return '';
         }
+    },
+
+    //authenticate
+    authenticate: function(pText) {
+        return this.encryptPassword(pText) === this.hashed_password;
     }
 }
 
