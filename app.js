@@ -31,6 +31,7 @@ mongoose.connect(process.env.DATABASE, {
 })
 .catch(err => console.log(err));
 
+//activates and listens to port
 const port = process.env.PORT || 8000
 
 app.listen(port, () => {
