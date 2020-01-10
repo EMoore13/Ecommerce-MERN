@@ -10,6 +10,7 @@ const expressValidator = require('express-validator');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const categoryRoutes = require('./routes/category');
+const productRoutes = require('./routes/product');
 
 //middleware
 app.use(morgan('dev'));
@@ -21,6 +22,7 @@ app.use(expressValidator());
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', categoryRoutes);
+app.use('/api', productRoutes);
 
 //db
 console.log('attempting connection...');
